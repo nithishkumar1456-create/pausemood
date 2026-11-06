@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+@import './tokens.css';
+@import "tailwindcss";
+
+@theme {
+  --color-border: #e2d9f3;
+  --color-input: #e2d9f3;
+  --color-ring: #7c5cbf;
+  --color-background: #faf7ff;
+  --color-foreground: #2d1f6e;
+  --color-primary: #7c5cbf;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f0eafb;
+  --color-secondary-foreground: #2d1f6e;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-muted: #f4eefd;
+  --color-muted-foreground: #8e82ad;
+  --color-accent: #ede4fb;
+  --color-accent-foreground: #7c5cbf;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #2d1f6e;
+  --color-card: #ffffff;
+  --color-card-foreground: #2d1f6e;
+  --color-chart-1: #7c5cbf;
+  --color-chart-2: #10b981;
+  --color-chart-3: #059669;
+  --radius-lg: 1.25rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+:root {
+  --background: 260 50% 98%;
+  --foreground: 254 56% 16%;
+  --card: 0 0% 100%;
+  --card-foreground: 254 56% 16%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 254 56% 16%;
+  --primary-hsl: 263 45% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 255 25% 94%;
+  --secondary-foreground: 254 56% 16%;
+  --muted: 255 25% 94%;
+  --muted-foreground: 258 20% 50%;
+  --accent-hsl: 263 45% 55%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 250 20% 88%;
+  --input: 250 20% 88%;
+  --ring: 263 45% 55%;
+  --radius: 1rem;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--text-base);
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: var(--weight-normal);
+  color: var(--text-body);
+  background: var(--bg-page);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--text-heading);
+  font-weight: var(--weight-extrabold);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Focus ring – visible for keyboard users */
+:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Centre the app column on wide screens */
+.page-wrapper {
+  max-width: var(--max-content);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+/* Full-screen centred layout (Welcome, Auth pages) */
+.page-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--nav-height));
+  padding: var(--space-6) var(--space-4);
+  max-width: var(--max-content);
+  margin: 0 auto;
+}
+
+/* Card surface */
+.card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-6);
+}
+
+/* Primary filled button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background: var(--primary);
+  color: var(--text-on-primary);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-base);
+  padding: 14px var(--space-6);
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  min-height: 48px;        /* 44px tap target */
+  transition: background var(--transition), transform var(--transition);
+  width: 100%;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Ghost button (outline style) */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background: transparent;
+  color: var(--primary);
+  font-weight: var(--weight-bold);
+  font-size: var(--text-base);
+  padding: 12px var(--space-6);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  min-height: 48px;
+  transition: background var(--transition), color var(--transition);
+  width: 100%;
+}
+.btn-ghost:hover:not(:disabled) {
+  background: var(--primary-light);
+}
+
+/* Text-link button */
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Form input base */
+.input {
+  width: 100%;
+  padding: 12px var(--space-4);
+  border: 2px solid var(--grey-200);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text-body);
+  background: var(--bg-surface);
+  transition: border-color var(--transition);
+  min-height: 48px;
+}
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Error text below input */
+.error-text {
+  font-size: var(--text-sm);
+  color: var(--error);
+  margin-top: var(--space-1);
+}
+
+/* Visually hidden (accessible only) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+

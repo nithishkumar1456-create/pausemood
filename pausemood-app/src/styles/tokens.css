@@ -1,0 +1,167 @@
+/* Design tokens extracted from reference images
+   PauseMood – calm, warm, cat-themed mood check-in app
+   Image 1: Full UI overview (Welcome, Home, History, Login, Care screens)
+   Image 2: Playful cat with coloured app-category icons (tone reference)
+   Image 3: ProDot login (soft purple background, card layout reference)
+   Image 4: Sleeping cat on clouds (illustration mood reference)
+   Image 5: Purrfectly Zen landing (warm cream bg, rounded pill badges)
+*/
+
+:root {
+  /* ── Backgrounds ─────────────────────────────────────── */
+  --bg-page:        #faf7ff;   /* very soft lavender-white */
+  --bg-surface:     #ffffff;   /* card / input surface */
+  --bg-nav:         #ffffff;   /* bottom nav bar */
+  --bg-welcome:     #f3edff;   /* lavender tint on welcome hero */
+
+  /* ── Primary brand (purple) ──────────────────────────── */
+  --primary:        #7c5cbf;   /* buttons, selected ring */
+  --primary-hover:  #6448a8;
+  --primary-light:  #ede5ff;   /* very light purple chip bg */
+
+  /* ── Text ────────────────────────────────────────────── */
+  --text-heading:   #2d1f6e;   /* deep purple-navy */
+  --text-body:      #4a3f6b;   /* medium purple-grey */
+  --text-muted:     #9f8fc0;   /* lighter, used for labels */
+  --text-on-primary:#ffffff;
+
+  /* ── Mood colours (from the 5-option picker in image 1) ─ */
+  --mood-1:         #f4a0b0;   /* Very low  – dusty rose/pink */
+  --mood-2:         #f9c784;   /* Low       – warm amber-yellow */
+  --mood-3:         #b5d99c;   /* Okay      – soft sage-green */
+  --mood-4:         #90d4a8;   /* Good      – mint-green */
+  --mood-5:         #c4a8e8;   /* Great     – soft lilac */
+
+  /* Mood light tints (card backgrounds) */
+  --mood-1-light:   #fff0f3;
+  --mood-2-light:   #fff8ec;
+  --mood-3-light:   #f1faeb;
+  --mood-4-light:   #ebf9f1;
+  --mood-5-light:   #f4efff;
+
+  /* ── Accent ──────────────────────────────────────────── */
+  --accent:         #f9a825;   /* warm golden yellow – Tele-MANAS card */
+  --accent-light:   #fff8e1;
+
+  /* ── Neutrals ────────────────────────────────────────── */
+  --grey-100:       #f5f3fb;
+  --grey-200:       #ece8f5;
+  --grey-300:       #d6ceec;
+  --grey-500:       #9f8fc0;
+  --grey-700:       #5c5280;
+  --grey-dot:       #d8d4e8;   /* 7-day strip: no check-in dot */
+
+  /* ── Semantic feedback ───────────────────────────────── */
+  --success:        #4caf50;
+  --error:          #e57373;
+  --warning:        #f9a825;
+
+  /* ── Spacing scale ───────────────────────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* ── Typography ──────────────────────────────────────── */
+  --font-body:    'Nunito', 'Segoe UI', sans-serif;
+  --font-heading: 'Nunito', 'Segoe UI', sans-serif;
+
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-lg:   18px;
+  --text-xl:   22px;
+  --text-2xl:  28px;
+  --text-3xl:  36px;
+
+  --weight-normal:    400;
+  --weight-semibold:  600;
+  --weight-bold:      700;
+  --weight-extrabold: 800;
+
+  /* ── Border radius ───────────────────────────────────── */
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-pill: 9999px;
+
+  /* ── Shadows ─────────────────────────────────────────── */
+  --shadow-sm:  0 1px 4px rgba(100, 72, 168, 0.08);
+  --shadow-md:  0 4px 16px rgba(100, 72, 168, 0.12);
+  --shadow-lg:  0 8px 32px rgba(100, 72, 168, 0.16);
+
+  /* ── Transitions ─────────────────────────────────────── */
+  --transition: 0.18s ease;
+
+  /* ── Layout ──────────────────────────────────────────── */
+  --max-content: 480px;   /* mobile-first column width */
+  --nav-height:  64px;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ── Global Dark Theme Overrides ────────────────────────── */
+:root.dark,
+body.dark-mode {
+  /* ── Backgrounds ─────────────────────────────────────── */
+  --bg-page:        #090615;   /* deep moody night */
+  --bg-surface:     #150f28;   /* card / input surface */
+  --bg-nav:         #150f28;   /* bottom nav bar */
+  --bg-welcome:     #0d081f;   /* dark lavender */
+
+  /* ── Primary brand ──────────────────────────────────── */
+  --primary:        #a78bfa;   /* vibrant lilac */
+  --primary-hover:  #bca4fc;
+  --primary-light:  #291c4d;
+
+  /* ── Text ────────────────────────────────────────────── */
+  --text-heading:   #f6f4fe;
+  --text-body:      #d6cee8;
+  --text-muted:     #8f82af;
+  --text-on-primary:#090615;
+
+  /* ── Mood colours (vibrant in dark mode) ─────────────── */
+  --mood-1:         #fb7185;   /* Very low  – rose */
+  --mood-2:         #fb923c;   /* Low       – amber */
+  --mood-3:         #a3e635;   /* Okay      – lime */
+  --mood-4:         #34d399;   /* Good      – emerald */
+  --mood-5:         #c084fc;   /* Great     – purple */
+
+  /* Mood light tints (card backgrounds in dark mode) */
+  --mood-1-light:   #2e1219;
+  --mood-2-light:   #2e190d;
+  --mood-3-light:   #182813;
+  --mood-4-light:   #0e2a20;
+  --mood-5-light:   #25153b;
+
+  /* ── Accent ──────────────────────────────────────────── */
+  --accent:         #fbbf24;
+  --accent-light:   #2b220e;
+
+  /* ── Neutrals ────────────────────────────────────────── */
+  --grey-100:       #19122f;
+  --grey-200:       #271e46;
+  --grey-300:       #3e3168;
+  --grey-500:       #7a6c9e;
+  --grey-700:       #b8addb;
+  --grey-dot:       #2e2450;
+
+  /* ── Shadows ─────────────────────────────────────────── */
+  --shadow-sm:  0 1px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md:  0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg:  0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+

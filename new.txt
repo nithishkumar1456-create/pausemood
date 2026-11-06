@@ -1,0 +1,5 @@
+dbpass: Ih9oUeap5FVMT8RM
+
+projecturl: https://jxvefzwdwzfbjfvytcll.supabase.co
+pushiablekey :sb_publishable_SxQHNwoEDMT5N9TixfulQA_isd7q_iZ
+connectionstring :postgresql://postgres:[YOUR-PASSWORD]@db.jxvefzwdwzfbjfvytcll.supabase.co:5432/postgres

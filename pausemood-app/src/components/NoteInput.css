@@ -1,0 +1,36 @@
+.note-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.note-input__label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-body);
+}
+
+.note-input__optional {
+  color: var(--text-muted);
+  font-weight: var(--weight-normal);
+}
+
+.note-input__textarea {
+  resize: none;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+.note-input__counter {
+  align-self: flex-end;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+/* Warn state: counter turns orange/red when < 20 chars remain */
+.note-input__counter--warn {
+  color: var(--error);
+  font-weight: var(--weight-bold);
+}
+

@@ -1,0 +1,190 @@
+/* Scoped fallback and enhancement styles for MagicLinkOtpLogin */
+.magic-link-container {
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Card base */
+[data-slot="magic-link-otp-login"] {
+  width: 100%;
+  background: #ffffff !important;
+  color: #2d1f6e !important;
+  border-radius: 28px !important;
+  border: 1.5px solid #ebdffc !important;
+  box-shadow: 0 16px 40px rgba(100, 72, 168, 0.1), 0 2px 6px rgba(100, 72, 168, 0.04) !important;
+  overflow: hidden !important;
+  display: block !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Header bar */
+[data-slot="magic-link-otp-login"] > div:first-child {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 16px 24px !important;
+  border-bottom: 1.5px solid #f2eafc !important;
+  background: #faf7ff !important;
+}
+
+/* Body */
+[data-slot="magic-link-otp-login"] [data-step-body] {
+  padding: 26px 28px 24px !important;
+  background: #ffffff !important;
+}
+
+/* Headings and labels */
+[data-slot="magic-link-otp-login"] h2 {
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  color: #2d1f6e !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.02em !important;
+  margin: 6px 0 4px 0 !important;
+}
+
+[data-slot="magic-link-otp-login"] p {
+  color: #7b6f93 !important;
+  font-size: 13.5px !important;
+  line-height: 1.5 !important;
+}
+
+[data-slot="magic-link-otp-login"] label {
+  display: block !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #554877 !important;
+  margin: 20px 0 8px 0 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* Inputs */
+[data-slot="magic-link-otp-login"] input[type="email"] {
+  height: 48px !important;
+  width: 100% !important;
+  border-radius: 14px !important;
+  border: 1.5px solid #ded6f0 !important;
+  background: #faf7ff !important;
+  padding: 0 16px !important;
+  font-size: 15px !important;
+  color: #2d1f6e !important;
+  box-sizing: border-box !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-slot="magic-link-otp-login"] input[type="email"]:focus {
+  border-color: #7c5cbf !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3.5px rgba(124, 92, 191, 0.15) !important;
+}
+
+/* Submit & action buttons */
+[data-slot="magic-link-otp-login"] button[type="submit"] {
+  height: 48px !important;
+  width: 100% !important;
+  border-radius: 14px !important;
+  background: #7c5cbf !important;
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin-top: 16px !important;
+  box-shadow: 0 4px 14px rgba(124, 92, 191, 0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-slot="magic-link-otp-login"] button[type="submit"]:hover:not(:disabled) {
+  background: #6b46c1 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(124, 92, 191, 0.38) !important;
+}
+
+[data-slot="magic-link-otp-login"] button[type="submit"]:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+/* OTP fields grid */
+[data-slot="magic-link-otp-login"] [data-code-fields] {
+  display: grid !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  gap: 8px !important;
+  margin: 16px 0 !important;
+}
+
+[data-slot="magic-link-otp-login"] [data-code-fields] input {
+  height: 56px !important;
+  width: 100% !important;
+  border-radius: 14px !important;
+  border: 1.5px solid #ded6f0 !important;
+  background: #faf7ff !important;
+  text-align: center !important;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  color: #2d1f6e !important;
+  box-sizing: border-box !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-slot="magic-link-otp-login"] [data-code-fields] input:focus {
+  border-color: #7c5cbf !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3.5px rgba(124, 92, 191, 0.2) !important;
+}
+
+/* Progress indicator row */
+[data-slot="magic-link-otp-login"] ol {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  padding: 14px 20px !important;
+  border-top: 1.5px solid #f2eafc !important;
+  background: #faf7ff !important;
+  list-style: none !important;
+  margin: 0 !important;
+}
+
+[data-slot="magic-link-otp-login"] ol li {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #8e82ad !important;
+}
+
+[data-slot="magic-link-otp-login"] ol li span {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  background: #e2d9f3 !important;
+  color: #634b8c !important;
+}
+
+[data-slot="magic-link-otp-login"] ol li[aria-current="step"] {
+  color: #2d1f6e !important;
+  font-weight: 700 !important;
+}
+
+[data-slot="magic-link-otp-login"] ol li[aria-current="step"] span {
+  background: #7c5cbf !important;
+  color: #ffffff !important;
+}
+

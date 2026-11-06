@@ -1,0 +1,48 @@
+.tag-picker {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tag-picker__label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-body);
+}
+
+.tag-picker__optional {
+  color: var(--text-muted);
+  font-weight: var(--weight-normal);
+}
+
+.tag-picker__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tag-chip {
+  padding: 6px var(--space-3);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--grey-200);
+  background: var(--bg-surface);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-body);
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition),
+    color var(--transition);
+  min-height: 36px;
+}
+
+.tag-chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.tag-chip--selected {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-on-primary);
+}
+

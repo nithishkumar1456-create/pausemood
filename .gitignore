@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment files with sensitive secrets
+.env
+.env.*
+*.local
+*/.env
+*/.env.*
+!.env.example
+!*/.env.example
+
+# Build output
+dist/
+build/
+*/dist/
+
+# Test coverage
+coverage/
+*/coverage/
+
+# OS metadata
+.DS_Store
+Thumbs.db

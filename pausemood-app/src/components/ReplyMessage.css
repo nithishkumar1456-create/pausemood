@@ -1,0 +1,16 @@
+.reply-message {
+  text-align: center;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-body);
+  background: var(--bg-page);
+  border-radius: var(--radius-pill);
+  padding: var(--space-3) var(--space-4);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+

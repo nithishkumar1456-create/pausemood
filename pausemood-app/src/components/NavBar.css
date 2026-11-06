@@ -1,0 +1,46 @@
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: var(--bg-nav);
+  box-shadow: 0 -2px 12px rgba(100, 72, 168, 0.1);
+  display: flex;
+  align-items: stretch;
+  z-index: 100;
+}
+
+.navbar__tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  transition: color var(--transition);
+  /* 44px+ tap target satisfied by the full tab height (64px) */
+}
+
+.navbar__tab:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.navbar__tab--active {
+  color: var(--primary);
+}
+
+.navbar__icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.navbar__label {
+  font-size: var(--text-xs);
+}
+
