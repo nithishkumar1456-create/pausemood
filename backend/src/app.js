@@ -16,17 +16,25 @@ export const app = express();
 // Security HTTP headers
 app.use(helmet());
 
-// CORS configuration (restricting to configured client origins)
+// CORS configuration
 const allowedOrigins = env.CLIENT_ORIGIN.split(',').map((origin) => origin.trim());
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps, curl, server-to-server) or matching origins
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error('Blocked by CORS policy'));
+      // Allow requests with no origin (like mobile apps, curl, server-to-server)
+      if (!origin) return callback(null, true);
+
+      // If wildcard, configured origins, Vercel deployments, or localhost
+      if (
+        allowedOrigins.includes('*') ||
+        allowedOrigins.includes(origin) ||
+        origin.endsWith('.vercel.app') ||
+        origin.includes('localhost')
+      ) {
+        return callback(null, true);
       }
+
+      callback(null, false);
     },
     credentials: true,
   })
