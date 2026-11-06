@@ -104,3 +104,4 @@ This guide covers deploying the full-stack **PauseMood** application using **Ver
 - [ ] Pull the cord → Dark mode applies smoothly across all pages.
 - [ ] Click **Check-In** → Save a mood entry with tags and optional notes.
 - [ ] Click **History** → View your 7-day emotional journey and pastel glow cards.
+
