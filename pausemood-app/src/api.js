@@ -10,7 +10,8 @@
  * A production app should use httpOnly cookies instead.
  */
 
-const BASE = import.meta.env.VITE_API_URL; // e.g. "http://localhost:4000"
+const RAW_BASE = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const BASE = RAW_BASE.replace(/\/+$/, '');
 
 // ── Token helpers ─────────────────────────────────────────────────────────────
 export function getToken() {
